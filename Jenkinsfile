@@ -27,7 +27,7 @@ pipeline {
     stage('Push') {
       steps {
         echo 'Push..'
-        sh "./build.sh ${IMAGE}/${TIME_STAMP}"
+        sh "./build.sh ${IMAGE}:${TIME_STAMP}"
       }
     }
 
@@ -35,6 +35,7 @@ pipeline {
       steps {
         echo 'Deploy..'
         sh "kubectl apply -f flask-app.yaml"
+        sh "kubectl set image deployment/catnip-deployment catnip=${IMAGE}:${TIME_STAMP}
       }
     }
   }
