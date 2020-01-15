@@ -26,7 +26,7 @@ pipeline {
     stage('Push') {
       steps {
         echo 'Push..'
-        sh "./build.sh $timestamp"
+        sh "./build.sh $TIME_STAMP"
       }
     }
 
