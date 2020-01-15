@@ -35,7 +35,6 @@ pipeline {
       steps {
         echo 'Deploy..'
         sh "kubectl apply -f flask-app.yaml"
-        sh "kubectl set image deployment catnip-deployment catnip=docker.io/${IMAGE}:${TIME_STAMP} --record"
       }
     }
   }
