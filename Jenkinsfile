@@ -1,7 +1,7 @@
+def now=new Date()
 pipeline {
   agent any
   environment{
-    def now= new Date()
     TIME_STAMP=now.format("yyMMddHHmm")
     IMAGE="ylihit/catnip"
   }
