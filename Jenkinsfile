@@ -4,7 +4,7 @@ pipeline {
     now= new Date()
     TIME_STAMP=now.format("yyMMddHHmm")
     IMAGE="ylihit/catnip"
-    IMAGE_WITH_TAG=${IMAGE}:${TIME_STAMP}
+    IMAGE_WITH_TAG=$IMAGE:$TIME_STAMP
   }
   stages {
     stage('Initialize the variables') {
