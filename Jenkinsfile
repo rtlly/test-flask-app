@@ -6,7 +6,7 @@ pipeline {
     stage('Initialize the variables') {
       steps{
         script{
-           TIME_STAMP=$(date+%Y%m%d%H%M%S)
+           TIME_STAMP=java.time.LocalDateTime.now()
         }
       }
     }
