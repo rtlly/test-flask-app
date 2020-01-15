@@ -6,7 +6,7 @@ pipeline {
     stage('Initialize the variables') {
       steps{
         script{
-           TIME_STAMP="v1.2"
+           TIME_STAMP=${date+%Y%m%d}
         }
       }
     }
