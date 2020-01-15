@@ -8,6 +8,7 @@ pipeline {
         script{
            TIME_STAMP=java.time.LocalDateTime.now()
         }
+        sh "echo ${TIME_STAMP}"
       }
     }
     stage('Build') {
