@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 image="ylihit/catnip"  
-tag=$image:$timestamp
+tag=$image:$TIME_STAMP
 
 docker build -t $tag .
 
