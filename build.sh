@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-image="ylihit/catnip"
-timestamp=$(date +%Y%m%d%H%M%S)  
+image="ylihit/catnip"  
 tag=$image:$timestamp
 
 docker build -t $tag .

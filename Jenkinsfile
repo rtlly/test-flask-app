@@ -1,7 +1,15 @@
+def TIME_STAMP
 pipeline {
   agent any
 
   stages {
+    stage('Initialize the variables') {
+      steps{
+        script{
+           TIME_STAMP="v1.2"
+        }
+      }
+    }
     stage('Build') {
       steps {
         echo 'Building..'
@@ -18,7 +26,7 @@ pipeline {
     stage('Push') {
       steps {
         echo 'Push..'
-        sh "./build.sh"
+        sh "./build.sh $timestamp"
       }
     }
 
