@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-timestamp=$1
-image="ylihit/catnip"  
-tag=${image}:$timestamp
+tag=$1
 
 docker build -t $tag .
 
