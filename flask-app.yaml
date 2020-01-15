@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: catnip
-        image: docker.io/ylihit/catnip:v1.1
+        image: $(IMAGE_TAG)
         ports:
         - name: http
           containerPort: 5000
