@@ -34,7 +34,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploy..'
-        sh "cat flask-app.yaml | sed "s/{{IMAGE_TAG}}/$TIME_STAMP/g" | kubectl apply -f -"
+        sh "cat flask-app.yaml | sed \"s/{{IMAGE_TAG}}/$TIME_STAMP/g\" | kubectl apply -f -"
       }
     }
   }
