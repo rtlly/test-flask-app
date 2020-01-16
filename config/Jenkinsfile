@@ -27,14 +27,14 @@ pipeline {
     stage('Push') {
       steps {
         echo 'Push..'
-        sh "./build.sh ${IMAGE}:${TIME_STAMP}"
+        sh "./buildscript/build.sh ${IMAGE}:${TIME_STAMP}"
       }
     }
 
     stage('Deploy') {
       steps {
         echo 'Deploy..'
-        sh "cat flask-app.yaml | sed \"s/{{IMAGE_TAG}}/$TIME_STAMP/g\" | kubectl apply -f -"
+        sh "cat build/flask-app.yaml | sed \"s/{{IMAGE_TAG}}/$TIME_STAMP/g\" | kubectl apply -f -"
       }
     }
   }
